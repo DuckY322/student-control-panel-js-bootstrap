@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Панель управления студентами</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="src/index.js"></script>
+  </head>
+  <body>
+    <div id="student-panel" class="container"></div>
+    <template id="template__form">
+      <h2 id="form__title">Добавить студента</h2>
+      <form id="form" class="input-group mb-5">
+        <input
+          id="inputFirstName"
+          class="form-control w-100 mb-1"
+          placeholder="Введите Имя студента"
+        /><input
+          id="inputSurname"
+          class="form-control w-100 mb-1"
+          placeholder="Введите Фамилию студента"
+        /><input
+          id="inputMiddleName"
+          class="form-control w-100 mb-1"
+          placeholder="Введите Отчество студента"
+        /><input
+          id="inputDateOfBirth"
+          class="form-control w-100 mb-1"
+          placeholder="Введите дату рождения студента"
+          type="date"
+          min="1900-01-01"
+        /><input
+          id="inputYearOfBeginningOfTraining"
+          class="form-control w-100 mb-1"
+          placeholder="Введите год начала обучения студента"
+          type="number"
+          min="2000"
+        /><input
+          id="inputFaculty"
+          class="form-control w-100 mb-1"
+          placeholder="Введите факультет студента"
+        />
+        <div class="input-group-append mr-3">
+          <button id="form__button" disabled="disabled" class="btn btn-primary">
+            Добавить
+          </button>
+        </div>
+      </form>
+    </template>
+    <template id="template__sort">
+      <h2>Список студентов</h2>
+      <div class="dropdown mb-3">
+        <a
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Сортировать</a
+        >
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+      </div>
+    </template>
+    <template id="template__filterItem">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >По имени</span
+          >
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+        />
+      </div>
+    </template>
+    <template id="template__studentCard">
+      <li
+        class="list-group-item d-flex flex-column justify-content-between align-items-center"
+      >
+        <p id="studentName" class="w-100"></p>
+        <p id="studentdateOfBirth" class="w-100"></p>
+        <p id="studentYearOfBeginningOfTraining" class="w-100"></p>
+        <p id="studentFaculty" class="w-100"></p>
+      </li>
+    </template>
+  </body>
+</html>
